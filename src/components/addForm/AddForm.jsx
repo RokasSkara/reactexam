@@ -20,8 +20,9 @@ const AddForm = () => {
             .then(Skills => {
                 e.target.elements.title.value = ''
                 e.target.elements.description.value = ''
+                alert(Skills.msg)
             })
-            .catch(err => console.log(err))
+            .catch(err => {return alert(err)})
     }
 
     return (<>
