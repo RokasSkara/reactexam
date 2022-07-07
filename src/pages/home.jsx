@@ -2,6 +2,7 @@ import Menu from '../components/menu/menu'
 import { useEffect, useState } from 'react';
 
 import SkillCard from '../components/SkillCard/skillCard';
+import PageFooter from '../components/footer/footer';
 
 const HomeMenuProps = ['Login', 'Register']
 
@@ -38,6 +39,7 @@ const Home = () => {
             </main>
             : <h4>No skill sets posted yet</h4>
         }
+        <PageFooter />
     </>);
 }
 
