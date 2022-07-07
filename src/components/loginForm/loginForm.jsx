@@ -1,4 +1,4 @@
-import { useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const LoginForm = () => {
     const redirect = useNavigate()
@@ -20,10 +20,15 @@ const LoginForm = () => {
         })
             .then(response => response.json())
             .then(data => {
-                localStorage.setItem('token', data.token)
-                redirect('/Home')
+                if (data.err) {
+                    return alert(data.err)
+                }
+                else {
+                    localStorage.setItem('token', data.token)
+                    redirect('/Home')
+                }
             })
-            .catch(err => {return alert(err)})
+            .catch(err => { return alert(err) })
 
     }
 

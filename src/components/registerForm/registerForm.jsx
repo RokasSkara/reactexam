@@ -19,6 +19,9 @@ const RegisterForm = () => {
             body: JSON.stringify(login),
         })
             .then(response => response.json())
+            .then(data => {
+                if (data.changes === 1) return alert('Email or password is not valid')
+            })
             .then(redirect('/login'))
             .catch(err => {return alert(err)})
 
