@@ -3,15 +3,24 @@ import './menu.css'
 
 import AddLink from '../link/link'
 
+const LoggedLinks = ['Home', 'Add','Logout']
+const StartingLinks = ['Home','Login', 'Register']
 
-const Menu = ({ links }) => {
+const Menu = () => {
+    const AuthToken = localStorage.getItem('token')
+    console.log(AuthToken)
+
     return (
         <header>
             <div>
                 <img src={Logo} alt="Logo" height="60px" />
             </div>
             <div className='MenuLinks'>
-                {links ? links.map((link, i) => <AddLink props={link} key={i} />) : ''}
+                {AuthToken ? <>
+                    {LoggedLinks.map((link, i) => <AddLink props={link} key={i} />)}
+                </> : <>
+                    {StartingLinks.map((link, i) => <AddLink props={link} key={i} />)}
+                </>}
             </div>
         </header >
     );
