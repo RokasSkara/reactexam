@@ -1,8 +1,14 @@
 header{
     display: flex;
+    justify-content: space-between;
 }
 
 .menuBarButtonLink{
     background-color: azure;
     border: none;
+}
+
+.MenuLinks{
+    display: flex;
+    align-items: center;
 }

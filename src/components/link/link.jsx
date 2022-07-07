@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 
+
+
 const AddLink = ({props}) => {
-    console.log(props)
     return ( 
         <div>
             <Link to={`/${props}`}><button className='menuBarButtonLink'>{props}</button></Link>
