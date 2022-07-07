@@ -3,9 +3,6 @@ import { useNavigate} from 'react-router-dom'
 const RegisterForm = () => {
     const redirect = useNavigate()
 
-
-
-
     const RegisterForm = (e) => {
         e.preventDefault()
         const login = {
@@ -23,9 +20,9 @@ const RegisterForm = () => {
         })
             .then(response => response.json())
             .then(redirect('/login'))
+            .catch(err => {return alert(err)})
 
     }
-
 
     return (
     <form onSubmit={RegisterForm}>
