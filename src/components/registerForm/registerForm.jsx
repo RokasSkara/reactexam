@@ -1,11 +1,19 @@
+import { useNavigate} from 'react-router-dom'
+
 const RegisterForm = () => {
+    const redirect = useNavigate()
+
+
+
+
     const RegisterForm = (e) => {
         e.preventDefault()
         const login = {
             email: e.target.elements.email.value,
             password: e.target.elements.password.value
         }
-        console.log(login)
+        e.target.elements.email.value = ''
+        e.target.elements.password.value = ''
         fetch('https://autumn-delicate-wilderness.glitch.me/v1/auth/register', {
             method: 'POST',
             headers: {
@@ -14,7 +22,7 @@ const RegisterForm = () => {
             body: JSON.stringify(login),
         })
             .then(response => response.json())
-            .then(data => console.log(data))
+            .then(redirect('/login'))
 
     }
 
