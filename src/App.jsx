@@ -8,6 +8,8 @@ import Login from './pages/login'
 import Register from './pages/register'
 import Add from './pages/add'
 
+import Logout from './pages/logout';
+
 
 function App() {
   return (
@@ -17,6 +19,7 @@ function App() {
         <Route path="/Login" element={<Login />} />
         <Route path="/Register" element={<Register />} />
         <Route path="/Add" element={<Add />} />
+        <Route path="/Logout" element={<Logout />} />
       </Routes>
     </>
   );
