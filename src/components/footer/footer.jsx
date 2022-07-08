@@ -1,8 +1,8 @@
 
 const PageFooter = () => {
     return ( 
-        <footer style={{marginTop: '90%', alignItems: 'center'}}>
-            <h4 >Footeris</h4>
+        <footer>
+            <h4 >Copyright © 2022 Rokas Skara. All rights reserved.</h4>
         </footer>
     );
 }
