@@ -3,6 +3,7 @@ import { useNavigate} from 'react-router-dom'
 const RegisterForm = () => {
     const redirect = useNavigate()
 
+
     const RegisterForm = (e) => {
         e.preventDefault()
         const login = {
@@ -22,8 +23,7 @@ const RegisterForm = () => {
             .then(data => {
                 if (data.changes !== 1) return alert('Email or password is not valid')
                 else {
-                    // eslint-disable-next-line no-unused-expressions
-                    data.changes === 1 ? alert('Registration succesfull, you will be redirected to Login window soon'): '';
+                    alert('Registration succesfull, you will be redirected to Login window soon')
                     setTimeout(() => redirect('/login'), 1000)
                 };
             })
