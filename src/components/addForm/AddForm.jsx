@@ -27,6 +27,7 @@ const AddForm = () => {
 
     return (<>
         <form onSubmit={AddFormEvent}>
+            <h1>Add Skill</h1>
             <label htmlFor="title">Skill Title</label>
             <input type="text" name="title" />
             <label htmlFor="description">Description</label>

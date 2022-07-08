@@ -8,7 +8,6 @@ import PageFooter from '../components/footer/footer';
 const Add = () => {
     const redirect = useNavigate();
     const AuthToken = localStorage.getItem('token')
-    console.log(AuthToken)
 
     useEffect(() => {
         if(AuthToken === null){

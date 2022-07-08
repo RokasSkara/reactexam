@@ -34,10 +34,11 @@ const LoginForm = () => {
 
     return (
         <form onSubmit={LoginForm}>
+            <h1>Login</h1>
             <label htmlFor="email">Email</label>
-            <input type="email" name="email" value={"Testas1@Test.com"} />
+            <input type="email" name="email" />
             <label htmlFor="password">Password</label>
-            <input type="password" name="password" value={"Test1234!"} />
+            <input type="password" name="password"/>
             <input type="submit" value={"Login"} />
         </form>
     );

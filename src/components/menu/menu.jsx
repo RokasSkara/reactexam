@@ -4,12 +4,10 @@ import './menu.css'
 import AddLink from '../link/link'
 
 const LoggedLinks = ['Home', 'Add','Logout']
-const StartingLinks = ['Home','Login', 'Register']
+const StartingLinks = ['Login', 'Register']
 
 const Menu = () => {
     const AuthToken = localStorage.getItem('token')
-    console.log(AuthToken)
-
     return (
         <header>
             <div>

@@ -20,15 +20,20 @@ const RegisterForm = () => {
         })
             .then(response => response.json())
             .then(data => {
-                if (data.changes === 1) return alert('Email or password is not valid')
+                if (data.changes !== 1) return alert('Email or password is not valid')
+                else {
+                    // eslint-disable-next-line no-unused-expressions
+                    data.changes === 1 ? alert('Registration succesfull, you will be redirected to Login window soon'): '';
+                    setTimeout(() => redirect('/login'), 1000)
+                };
             })
-            .then(redirect('/login'))
             .catch(err => {return alert(err)})
 
     }
 
     return (
     <form onSubmit={RegisterForm}>
+        <h1>Register</h1>
         <label htmlFor="email">Email</label>
         <input type="email" name="email"/>
         <label htmlFor="password">Password</label>
