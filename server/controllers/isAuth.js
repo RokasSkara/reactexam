@@ -2,23 +2,21 @@
 
 import jwt from 'jsonwebtoken'
 
-let Auth = (req, res) => {
-    let x = false;
-
-    const token = req.headers.authorization.slice(7)
+let Auth = (req, res, next) => {
+    const token = req.headers.authorization ? req.headers.authorization.slice(7): ''
 
     const privateKey = process.env.SECRET;
 
     
      jwt.verify(token, privateKey, (err, decoded) => {
         if (err) {
-            x = false
+            return;
         } else {
             req.token = decoded
-            x = true;
+            return next();
         }
     })
-    return x;
+    return;
 }
 
 export default Auth

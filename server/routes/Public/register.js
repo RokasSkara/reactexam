@@ -18,7 +18,6 @@ router.post('/', async (req, res) => {
                 .then(res => res.json())
                 .then(users => {
                     duplicate = users.some(user => user.email === email)
-                    console.log(duplicate)
                 })
             //Proceeding only if email is not already in use
             if (!duplicate) {
@@ -36,13 +35,13 @@ router.post('/', async (req, res) => {
                     msg: 'Registration successfull',
                 })
             } else {
-                res.status(400).send('User already exists')
+               return res.status(400).send({ err: 'User already exists'})
             }
         } catch (err) {
             res.status(500).send({ error: `Error:` + err })
         }
     } else {
-        res.status(400).send('Incorrect information provided, check and try again')
+        res.status(400).send({err: 'Incorrect information provided, check and try again'})
     }
 })
 

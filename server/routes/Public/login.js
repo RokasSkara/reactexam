@@ -25,7 +25,6 @@ router.post('/', async (req, res) => {
             UserExists = users.some(user => user.email === email)
             users.filter(user => user.email === email ? passCompare = user.password: '')
         })
-        console.log(UserExists)
         if(UserExists){
             const Auth = await bcrypt.compare(password, passCompare)
             if(Auth){
@@ -33,7 +32,7 @@ router.post('/', async (req, res) => {
                 const token = jwt.sign({
                     username: email
                 }, privateKey, {
-                    expiresIn: '10m'
+                    expiresIn: '120m'
                 })
                 return res.json({
                     msg: "Successfully logged in",
@@ -41,12 +40,12 @@ router.post('/', async (req, res) => {
                 })
             } else {
                 return res.json({
-                    msg: "Incorrect email or password",
+                    err: "Incorrect email or password",
                 })
             }
         } else {
             return res.json({
-                msg: "Incorrect email or password",
+                err: "Incorrect email or password",
             })
         }
         

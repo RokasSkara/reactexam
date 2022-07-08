@@ -4,18 +4,17 @@ import Auth from '../../controllers/isAuth.js';
 
 const router = express.Router();
 
-router.get('/', async (req, res) => {
-    if (Auth(req, res)) {
+router.get('/', Auth, async (req, res) => {
+    try {
         const response = await fetch(`http://localhost:8080/skills`);
         const data = await response.json();
         res.json(!data.length ? { msg: "0 records available" } : data)
-    } else {
+    } catch (err) {
         res.status(400).send({ msg: 'Invalid token' })
     }
 })
 
-router.post('/', async (req, res) => {
-    if (Auth(req, res)) {
+router.post('/', Auth, async (req, res) => {
         const { title, description } = req.body
         const skill = {
             title: title,
@@ -38,9 +37,6 @@ router.post('/', async (req, res) => {
             return res.status(400).send({ msg: err })
         }
 
-    } else {
-        res.status(400).send({ msg: 'Invalid token' })
-    }
 })
 
 export default router;
