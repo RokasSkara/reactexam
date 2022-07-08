@@ -17,7 +17,7 @@ const Home = () => {
         if (AuthToken === null) {
             redirect('/Login')
         } else {
-            fetch('https://autumn-delicate-wilderness.glitch.me/v1/content/skills', {
+            fetch('http://localhost:5000/skills', {
                 headers: {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json',

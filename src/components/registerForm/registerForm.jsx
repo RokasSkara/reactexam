@@ -12,7 +12,7 @@ const RegisterForm = () => {
         }
         e.target.elements.email.value = ''
         e.target.elements.password.value = ''
-        fetch('https://autumn-delicate-wilderness.glitch.me/v1/auth/register', {
+        fetch('http://localhost:5000/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -35,9 +35,9 @@ const RegisterForm = () => {
     <form onSubmit={RegisterForm}>
         <h1>Register</h1>
         <label htmlFor="email">Email</label>
-        <input type="email" name="email"/>
+        <input type="email" name="email" required/>
         <label htmlFor="password">Password</label>
-        <input type="password" name="password"/>
+        <input type="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  minLength={8} title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required/>
         <input type="submit" value={"Register"} />
     </form>
     );

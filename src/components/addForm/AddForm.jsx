@@ -7,7 +7,7 @@ const AddForm = () => {
             description: e.target.elements.description.value
         }
 
-        fetch('https://autumn-delicate-wilderness.glitch.me/v1/content/skills', {
+        fetch('http://localhost:5000/skills', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

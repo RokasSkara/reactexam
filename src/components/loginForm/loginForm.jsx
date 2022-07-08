@@ -11,7 +11,7 @@ const LoginForm = () => {
         }
         e.target.elements.email.value = ''
         e.target.elements.password.value = ''
-        fetch('https://autumn-delicate-wilderness.glitch.me/v1/auth/login', {
+        fetch('http://localhost:5000/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -38,7 +38,7 @@ const LoginForm = () => {
             <label htmlFor="email">Email</label>
             <input type="email" name="email" />
             <label htmlFor="password">Password</label>
-            <input type="password" name="password"/>
+            <input type="password" name="password" minLength={8}/>
             <input type="submit" value={"Login"} />
         </form>
     );
