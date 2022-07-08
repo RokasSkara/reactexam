@@ -16,7 +16,6 @@ const CredSchema = {
 const validate = ajv.compile(CredSchema)
 
 let CredentialValidation = (data) => {
-    console.log(data)
     const valid = validate(data)
     return valid
 }
