@@ -38,7 +38,7 @@ const LoginForm = () => {
             <label htmlFor="email">Email</label>
             <input type="email" name="email" />
             <label htmlFor="password">Password</label>
-            <input type="password" name="password" minLength={8}/>
+            <input type="password" name="password" minLength={2}/>
             <input type="submit" value={"Login"} />
         </form>
     );
