@@ -26,7 +26,10 @@ footer{
   box-sizing: border-box;
   text-align: center;
   color: rgba(134, 132, 132, 0.5);
+  padding-right: 10%
 }
+
+
 
 input, label, textarea{
   margin: 0 1em;
@@ -35,4 +38,8 @@ input, label, textarea{
 
 form h1 {
   text-align: center;
+}
+
+input[type="submit"]{
+  width: 30%;
 }
