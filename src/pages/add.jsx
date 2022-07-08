@@ -10,7 +10,7 @@ const Add = () => {
     const AuthToken = localStorage.getItem('token')
 
     useEffect(() => {
-        if(AuthToken === null){
+        if (AuthToken === null) {
             redirect('/Login')
         }
     })

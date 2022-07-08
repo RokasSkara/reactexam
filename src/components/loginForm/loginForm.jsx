@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 
 const LoginForm = () => {
+
     const redirect = useNavigate()
 
     const LoginForm = (e) => {
@@ -38,7 +39,7 @@ const LoginForm = () => {
             <label htmlFor="email">Email</label>
             <input type="email" name="email" />
             <label htmlFor="password">Password</label>
-            <input type="password" name="password" minLength={2}/>
+            <input type="password" name="password" minLength={2} />
             <input type="submit" value={"Login"} />
         </form>
     );

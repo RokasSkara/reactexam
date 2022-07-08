@@ -5,7 +5,7 @@ import PageFooter from '../components/footer/footer';
 const Login = () => {
     return (
         <>
-            <Menu/>
+            <Menu />
             <LoginForm />
             <PageFooter />
         </>

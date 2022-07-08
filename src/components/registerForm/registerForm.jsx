@@ -1,4 +1,4 @@
-import { useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const RegisterForm = () => {
     const redirect = useNavigate()
@@ -27,19 +27,19 @@ const RegisterForm = () => {
                     setTimeout(() => redirect('/login'), 1000)
                 };
             })
-            .catch(err => {return alert(err)})
+            .catch(err => { return alert(err) })
 
     }
 
     return (
-    <form onSubmit={RegisterForm}>
-        <h1>Register</h1>
-        <label htmlFor="email">Email</label>
-        <input type="email" name="email" required/>
-        <label htmlFor="password">Password</label>
-        <input type="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  minLength={8} title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required/>
-        <input type="submit" value={"Register"} />
-    </form>
+        <form onSubmit={RegisterForm}>
+            <h1>Register</h1>
+            <label htmlFor="email">Email</label>
+            <input type="email" name="email" required />
+            <label htmlFor="password">Password</label>
+            <input type="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" minLength={8} title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required />
+            <input type="submit" value={"Register"} />
+        </form>
     );
 }
 

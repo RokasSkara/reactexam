@@ -1,5 +1,7 @@
 const AddForm = () => {
+
     const AuthToken = localStorage.getItem('token')
+
     const AddFormEvent = (e) => {
         e.preventDefault()
         const skill = {
@@ -22,7 +24,7 @@ const AddForm = () => {
                 e.target.elements.description.value = ''
                 alert(Skills.msg)
             })
-            .catch(err => {return alert(err)})
+            .catch(err => { return alert(err) })
     }
 
     return (<>

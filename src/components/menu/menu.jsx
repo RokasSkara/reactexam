@@ -3,7 +3,7 @@ import './menu.css'
 
 import AddLink from '../link/link'
 
-const LoggedLinks = ['Home', 'Add','Logout']
+const LoggedLinks = ['Home', 'Add', 'Logout']
 const StartingLinks = ['Login', 'Register']
 
 const Menu = () => {
