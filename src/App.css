@@ -8,6 +8,8 @@ form{
   flex-direction: column;
   width: 30%;
   margin: 3em auto;
+  background-color: white;
+  border-radius: 5%;
 }
 
 .SkillCardTab{
@@ -15,4 +17,22 @@ form{
   display: flex;
   flex-wrap: wrap;
   gap: 1em;
+}
+
+footer{
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  box-sizing: border-box;
+  text-align: center;
+  color: rgba(134, 132, 132, 0.5);
+}
+
+input, label, textarea{
+  margin: 0 1em;
+  margin-bottom: 1em;
+}
+
+form h1 {
+  text-align: center;
 }
