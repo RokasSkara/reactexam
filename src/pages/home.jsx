@@ -25,16 +25,15 @@ const Home = () => {
                 }
             })
                 .then(res => res.json())
-                .then(Skills => { setSkillsData(Skills) })
+                .then(Skills => {setSkillsData(Skills)})
                 .catch(err => { return alert(err) })
         }
 
     }, [AuthToken])
-
     return (<>
         <Menu />
         <main className='SkillCardTab'>
-            {SkillsData.length !== 0 ? SkillsData.map(skill => <SkillCard props={skill} key={skill.id} />) : <h4>No skills added yet</h4>}
+            {SkillsData.length !== 0 && SkillsData.msg !== '0 records available'? SkillsData.map(skill => <SkillCard props={skill} key={skill.id} />) : <h4>No skills added yet</h4>}
         </main>
         <PageFooter />
     </>);

@@ -39,7 +39,7 @@ const LoginForm = () => {
             <label htmlFor="email">Email</label>
             <input type="email" name="email" />
             <label htmlFor="password">Password</label>
-            <input type="password" name="password" minLength={2} />
+            <input type="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" minLength={8} title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required  />
             <input type="submit" value={"Login"} />
         </form>
     );
